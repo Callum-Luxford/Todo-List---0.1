@@ -18,22 +18,22 @@ function allTasks() {
 }
 
 inputField.addEventListener("keyup", function (event) {
-let inputVal = inputField.value.trim();
+    let inputVal = inputField.value.trim();
 
-    if(event.key === "Enter" && inputVal.length > 0) {
-        let liTag = `<li class="list pending" onmousedown="handleStatus(this)">
+    if (event.key === "Enter" && inputVal.length > 0) {
+        let liTag = `<li class="list pending" onclick="handleStatus(this)">
         <input type="checkbox">
         <span class="task">${inputVal}</span>
-        <i class='bx bx-trash-alt' onmousedown="deleteTask(this)"></i>
+        <i class='bx bx-trash-alt' onclick="deleteTask(this)"></i>
     </li>`;
 
-    todoLists.insertAdjacentHTML("beforeend", liTag);
-    inputField.value = ""; 
-    allTasks();
+        todoLists.insertAdjacentHTML("beforeend", liTag);
+        inputField.value = "";
+        allTasks();
     }
 });
 
-function handleStatus (e) {
+function handleStatus(e) {
     const checkbox = e.querySelector("input");
     checkbox.checked = checkbox.checked ? false : true;
     e.classList.toggle("pending")
@@ -45,7 +45,7 @@ function deleteTask(e) {
     allTasks();
 }
 
-clearButton.addEventListener("onmousedown", () => {
+clearButton.addEventListener("click", () => {
     todoLists.innerHTML = "";
     allTasks();
 })
