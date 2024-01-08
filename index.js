@@ -21,10 +21,10 @@ inputField.addEventListener("keyup", function (event) {
 let inputVal = inputField.value.trim();
 
     if(event.key === "Enter" && inputVal.length > 0) {
-        let liTag = `<li class="list pending" onclick="handleStatus(this)">
+        let liTag = `<li class="list pending" onmousedown="handleStatus(this)">
         <input type="checkbox">
         <span class="task">${inputVal}</span>
-        <i class='bx bx-trash-alt' onclick="deleteTask(this)"></i>
+        <i class='bx bx-trash-alt' onmousedown="deleteTask(this)"></i>
     </li>`;
 
     todoLists.insertAdjacentHTML("beforeend", liTag);
