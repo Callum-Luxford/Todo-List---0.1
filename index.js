@@ -45,7 +45,7 @@ function deleteTask(e) {
     allTasks();
 }
 
-clearButton.addEventListener("click", () => {
+clearButton.addEventListener("onmousedown", () => {
     todoLists.innerHTML = "";
     allTasks();
 })
