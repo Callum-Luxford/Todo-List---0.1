@@ -48,7 +48,7 @@ function deleteTask(e) {
 clearButton.addEventListener("click", () => {
     todoLists.innerHTML = "";
     allTasks();
-})
+});
 
 
 
